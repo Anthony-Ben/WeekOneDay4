@@ -8,4 +8,4 @@ Create an activity with an edittext for each item listed below.  On a button cli
 	State
 	Zip
 
-![](app/src/main/res/drawable-v24/Assn4PNG.PNG)
+![](/app/Assn4PNG.PNG)
