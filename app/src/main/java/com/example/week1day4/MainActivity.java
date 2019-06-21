@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     EditText efirstName,elastName,eAddress,ecity,estate,ezip;
     TextView tvFirstName,tvLastName,tvAddress,tvCity,tvState,tvZip;
@@ -56,12 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
                 Person person = new Person();
 
+                System.out.println("Hello!");
                 person.setFirstName(fName);
                 person.setLastName(lName);
                 person.setStreetAddress(sAddress);
                 person.setCity(city);
                 person.setState(state);
                 person.setZip(zip);
+
 
 
                 tvFirstName.setText(person.getFirstName());
