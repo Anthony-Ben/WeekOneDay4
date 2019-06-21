@@ -9,7 +9,7 @@
     </style>
     
     <style name="Labels">
-        <item name="android:textSize"></item>
+        <item name="android:textSize">@dimen/ResultSize</item>
     </style>
 
 </resources>

@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Week1Day4</string>
-    <string name="enter_first_name">Enter First Name</string>
     <string name="first_name_hint">First name</string>
     <string name="last_name_hint">Last Name</string>
-    <string name="enter_last_name">Enter Last Name</string>
+    <string name="city_hint">City</string>
+    <string name="zip_hint">Zip</string>
+    <string name="state_hint">State</string>
+    <string name="street_address_hint">Street Address</string>
+
+    <string name="first_name"></string>
+    <string name="last_name"></string>
+    <string name="street_address"></string>
+    <string name="city"></string>
+    <string name="state"></string>
+    <string name="zip"></string>
+
 </resources>

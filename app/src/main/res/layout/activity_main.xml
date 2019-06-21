@@ -4,67 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="@dimen/spacing">
 
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp"
 
-        >
-
-        <TextView
-            android:id="@+id/first_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_first_name"
-
-            android:layout_marginRight="30dp"
-            android:layout_alignParentLeft="true"
-
-            android:textSize="@dimen/LabelSize"
-            />
 
         <EditText
             android:id="@+id/eT_first_name"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/first_name"
-
+            android:layout_alignParentStart="true"
             android:hint="@string/first_name_hint"
-            android:layout_alignParentLeft="true"
-
+            app:layout_constraintBottom_toTopOf="@id/eT_street_address"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
         <EditText
             android:id="@+id/eT_last_name"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/first_name"
-
+            android:layout_marginStart="@dimen/spacing"
             android:hint="@string/last_name_hint"
-            android:layout_alignLeft="@id/last_name"
-
-
-
+            app:layout_constraintStart_toEndOf="@id/eT_first_name"
+            app:layout_constraintBottom_toTopOf="@id/eT_street_address"
             />
 
-        <TextView
-            android:id="@+id/last_name"
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/eT_street_address"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/first_name"
-            android:text="@string/enter_last_name"
+            android:layout_below="@id/eT_first_name"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/street_address_hint"
+            app:layout_constraintTop_toBottomOf="@id/eT_first_name"
+            />
 
-            android:textSize="@dimen/LabelSize" />
+        <EditText
+            android:id="@+id/eT_city"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eT_street_address"
+            android:layout_alignStart="@id/eT_street_address"
+            android:hint="@string/city_hint"
+            app:layout_constraintTop_toBottomOf="@id/eT_street_address"
+            app:layout_constraintRight_toLeftOf="@id/eT_state"
+            />
 
-    </RelativeLayout>
+        <EditText
+            android:id="@+id/eT_state"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eT_street_address"
+            android:layout_alignEnd="@id/eT_city"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/spacing"
+            android:layout_marginRight="@dimen/spacing"
+            android:hint="@string/state_hint"
+            app:layout_constraintLeft_toRightOf="@id/eT_city"
+            app:layout_constraintTop_toBottomOf="@id/eT_street_address"
+            />
 
-<!--
+        <EditText
+            android:id="@+id/et_zip"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eT_street_address"
+            android:hint="@string/zip_hint"
+            app:layout_constraintLeft_toRightOf="@id/eT_state"
+            app:layout_constraintTop_toBottomOf="@id/eT_street_address"
+            />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:onClick="onClick"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/eT_state"
+            android:layout_marginTop="@dimen/spacing"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing">
+
+                <TextView
+                    android:id="@+id/label_first_name"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/first_name"/>
+
+                <TextView
+                    android:id="@+id/label_last_name"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/last_name"/>
+
+                <TextView
+                    android:id="@+id/label_street_address"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/street_address"/>
+
+                <TextView
+                    android:id="@+id/label_city"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/city"/>
+
+                <TextView
+                    android:id="@+id/label_state"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/state"/>
+
+                <TextView
+                    android:id="@+id/label_zip"
+                    style="@style/Labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zip"/>
+
+        </LinearLayout>
+
+    <!--
     <TextView
         android:id="@+id/street_address"
         android:layout_width="match_parent"
