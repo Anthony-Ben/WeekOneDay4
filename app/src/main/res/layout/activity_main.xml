@@ -7,8 +7,6 @@
     tools:context=".MainActivity"
     android:layout_margin="@dimen/spacing">
 
-
-
         <EditText
             android:id="@+id/eT_first_name"
             android:layout_width="150dp"
@@ -28,7 +26,6 @@
             app:layout_constraintStart_toEndOf="@id/eT_first_name"
             app:layout_constraintBottom_toTopOf="@id/eT_street_address"
             />
-
 
         <EditText
             android:id="@+id/eT_street_address"
